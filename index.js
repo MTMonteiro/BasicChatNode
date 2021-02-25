@@ -18,8 +18,8 @@ io.on("connection", (socket) =>{
 
     socket.on("msg", (data) => {
         // socket.emit("showmsg", data) // resposta para usuario
-        io.emit("showmsg", data) // resposta para todos
-        
+        io.emit("showmsg", data) // resposta para todos pois io é o servidor
+        // socket.broadcast.emit("msg", data) //Manda evento para todos menos pra quem emitiu
         console.log(data);
     })
 
